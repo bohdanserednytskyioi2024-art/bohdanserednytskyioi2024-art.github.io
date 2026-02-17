@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Симулятор міста</title>
+    <link rel="stylesheet" href="css\style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">CitySimulator 2026</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#mycity">Моє місто</a></li>
+                <li><a href="#construction">Будівництво</a></li>
+                <li><a href="#resources">Ресурси міста</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="mycity">
+            <h2>Моє місто</h2>
+            <article>
+                <p>Тут відображається карта вашого мегаполісу.</p>
+                <div class="city-grid">
+                    <div class="grid-item house">Дім</div>
+                    <div class="grid-item road">Дорога</div>
+                    <div class="grid-item factory">Завод</div>
+                    <div class="grid-item road">Дорога</div>
+                    <div class="grid-item park">Парк</div>
+                    <div class="grid-item empty">Пустир</div>
+                </div>
+            </article>
+        </section>
+
+        <section id="construction">
+            <h2>Будівництво</h2>
+            <div class="content-wrapper">
+                <img src="img/city-plan.webp" alt="План будівництва" class="feature-img">
+                <div>
+                    <p>Оберіть об'єкт для будівництва.</p>
+                    <p>Наразі доступні для зведення:</p>
+                    <ul>
+                        <li>Житловий комплекс (потребує 50 бетону)</li>
+                        <li>Електростанція (потребує 100 металу)</li>
+                        <li>Паркова зона (потребує 20 дерева)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources">
+            <h2>Ресурси міста</h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Бюджет</h3>
+                    <p>1,000,000 ₴</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Матеріали</h3>
+                    <p>Бетон: 500т | Метал: 200т</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Будівельники</h3>
+                    <p>50 осіб</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Контакти мерії</h3>
+            <p>Адреса: вул. Сахарова, 19</p>
+            <p>Email: mayor@citysim.ua</p>
+            <p>Тел: +380 44 123 45 67</p>
+        </div>
+        <p class="copyright">&copy; 2026 Симулятор Міста. Всі права захищено.</p>
+    </footer>
+</body>
+</html>
