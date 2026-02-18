@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Симулятор міста</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
     <link rel="stylesheet" href="css\style.css">
 </head>
 <body>
@@ -23,14 +31,18 @@
             <h2>Моє місто</h2>
             <article>
                 <p>Тут відображається карта вашого мегаполісу.</p>
-                <div class="city-grid">
-                    <div class="grid-item house">Дім</div>
-                    <div class="grid-item road">Дорога</div>
-                    <div class="grid-item factory">Завод</div>
-                    <div class="grid-item road">Дорога</div>
-                    <div class="grid-item park">Парк</div>
-                    <div class="grid-item empty">Пустир</div>
+                <div class="map-container">
+                    <iframe 
+        width="100%" 
+        height="400" 
+        src="https://www.openstreetmap.org/export/embed.html?bbox=30.4900%2C50.4300%2C30.5500%2C50.4700&amp;layer=mapnik" 
+        style="border: 1px solid black">
+                    </iframe>
+                    <br/>
+     <small><a href="https://www.openstreetmap.org/#map=13/50.4500/30.5200">Переглянути більшу карту</a></small>
                 </div>
+
+    
             </article>
         </section>
 
@@ -38,14 +50,24 @@
             <h2>Будівництво</h2>
             <div class="content-wrapper">
                 <img src="img/city-plan.webp" alt="План будівництва" class="feature-img">
-                <div>
-                    <p>Оберіть об'єкт для будівництва.</p>
-                    <p>Наразі доступні для зведення:</p>
-                    <ul>
-                        <li>Житловий комплекс (потребує 50 бетону)</li>
-                        <li>Електростанція (потребує 100 металу)</li>
-                        <li>Паркова зона (потребує 20 дерева)</li>
-                    </ul>
+                
+                <div class="construction-controls">
+                    <p>Оберіть об'єкт для будівництва та натисніть кнопку:</p>
+                    
+                    <form action="#" class="build-form">
+                        <label for="building-type">Тип об'єкта:</label>
+                        <select id="building-type" name="building">
+                            <option value="house">Житловий комплекс (50 бетону)</option>
+                            <option value="factory">Електростанція (100 металу)</option>
+                            <option value="park">Паркова зона (20 дерева)</option>
+                        </select>
+
+                        <button type="button" class="btn-build">Побудувати</button>
+                    </form>
+
+                    <div class="info-box">
+                        <p>⚠️ <em>Увага: Для будівництва переконайтеся у наявності вільних будівельників.</em></p>
+                    </div>
                 </div>
             </div>
         </section>

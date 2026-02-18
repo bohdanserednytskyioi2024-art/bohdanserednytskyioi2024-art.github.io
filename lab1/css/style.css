@@ -1,3 +1,9 @@
+/* =========================================
+   1. БАЗОВІ НАЛАШТУВАННЯ (RESET)
+   ========================================= */
+* {
+    box-sizing: border-box; /* Важливо: щоб padding не збільшував розмір блоків */
+}
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -8,7 +14,9 @@ body {
     color: #333;
 }
 
-/* Стилізація навігації */
+/* =========================================
+   2. ШАПКА ТА НАВІГАЦІЯ
+   ========================================= */
 .main-header {
     background-color: #2c3e50;
     color: white;
@@ -16,6 +24,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.map-container {
+    border: 5px solid #7f8c8d; /* Твоя сіра рамка як у варіанті */
+    border-radius: 8px;
+    overflow: hidden; /* Щоб кути були закруглені */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+iframe {
+    display: block; /* Прибирає зайві відступи знизу */
+    border: none;
 }
 
 .logo {
@@ -43,11 +63,13 @@ body {
     border-radius: 5px;
 }
 
-/* Основний контент */
+/* =========================================
+   3. ОСНОВНИЙ КОНТЕНТ
+   ========================================= */
 main {
     padding: 20px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; /* Центрування сторінки */
 }
 
 section {
@@ -64,10 +86,12 @@ h2 {
     padding-bottom: 10px;
 }
 
-/* CSS Grid для візуалізації міста */
+/* =========================================
+   4. КАРТА МІСТА (CSS GRID) - Вимога варіанту
+   ========================================= */
 .city-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    grid-template-columns: repeat(3, 1fr); /* 3 рівні колонки */
     gap: 10px;
     margin-top: 20px;
     background-color: #bdc3c7;
@@ -83,15 +107,18 @@ h2 {
     justify-content: center;
     font-weight: bold;
     border: 2px solid #95a5a6;
+    border-radius: 4px;
 }
 
-/* Кольори для різних об'єктів */
+/* Кольори для різних типів будівель */
 .house { background-color: #f1c40f; }
 .road { background-color: #34495e; color: white; }
 .factory { background-color: #e74c3c; color: white; }
 .park { background-color: #2ecc71; }
 
-/* Зображення та контент */
+/* =========================================
+   5. СЕКЦІЯ БУДІВНИЦТВА (ФОРМА)
+   ========================================= */
 .content-wrapper {
     display: flex;
     gap: 20px;
@@ -102,13 +129,71 @@ h2 {
     max-width: 300px;
     width: 100%;
     border-radius: 5px;
+    object-fit: cover;
 }
 
+/* Стилі для панелі керування будівництвом */
+.construction-controls {
+    flex: 1; /* Займає весь вільний простір */
+}
 
+.build-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    background: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+}
+
+.build-form label {
+    font-weight: bold;
+}
+
+.build-form select {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+}
+
+.btn-build {
+    padding: 10px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.btn-build:hover {
+    background-color: #2ecc71;
+}
+
+.info-box {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    background: #fff;
+    padding: 10px;
+    border-left: 4px solid #f39c12;
+}
+
+/* =========================================
+   6. РЕСУРСИ МІСТА
+   ========================================= */
 .stats-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 .stat-card {
@@ -116,11 +201,20 @@ h2 {
     padding: 15px;
     border-radius: 5px;
     text-align: center;
+    flex: 1; /* Рівномірний розподіл ширини */
     min-width: 200px;
     margin-top: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
+.stat-card h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
 
+/* =========================================
+   7. ПІДВАЛ (FOOTER)
+   ========================================= */
 footer {
     background-color: #2c3e50;
     color: #ecf0f1;
@@ -129,9 +223,16 @@ footer {
     margin-top: 20px;
 }
 
-/* Адаптивний дизайн */
+.footer-content h3 {
+    color: #e67e22;
+    margin-bottom: 10px;
+}
 
+/* =========================================
+   8. АДАПТИВНІСТЬ (MEDIA QUERIES)
+   ========================================= */
 
+/* Планшети (менше 768px) */
 @media (max-width: 768px) {
     .main-header {
         flex-direction: column;
@@ -145,26 +246,29 @@ footer {
     }
 
     .content-wrapper {
-        flex-direction: column; 
+        flex-direction: column; /* Зображення стає над формою */
     }
 
     .feature-img {
         max-width: 100%; 
     }
 
-   
     .city-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
     }
 }
 
-
+/* Мобільні телефони (менше 480px) */
 @media (max-width: 480px) {
     .city-grid {
-        grid-template-columns: 1fr; /* Одна колонка */
+        grid-template-columns: 1fr; /* 1 колонка */
     }
     
     h2 {
         font-size: 1.2rem;
+    }
+
+    .stats-container {
+        flex-direction: column;
     }
 }
