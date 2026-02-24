@@ -137,6 +137,54 @@ h2 {
     flex: 1; /* Займає весь вільний простір */
 }
 
+/* Сітка вибору будівель (CSS Grid) */
+.construction-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Робимо 2 рівні колонки */
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* Оформлення самої картки будівлі */
+.build-card {
+    background-color: #fff;
+    border: 2px solid #bdc3c7;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer; /* Курсор стає "рукою" при наведенні */
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ефект при наведенні мишки */
+.build-card:hover {
+    border-color: #3498db; /* Синя рамка */
+    background-color: #ebf5fb; /* Світло-синій фон */
+    transform: translateY(-2px); /* Трохи піднімається вгору */
+}
+
+/* Стилі для тексту всередині картки */
+.build-card .icon {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.build-card .name {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+.build-card .cost {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
 .build-form {
     display: flex;
     flex-direction: column;

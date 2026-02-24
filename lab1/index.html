@@ -51,24 +51,39 @@
             <div class="content-wrapper">
                 <img src="img/city-plan.webp" alt="План будівництва" class="feature-img">
                 
-                <div class="construction-controls">
-                    <p>Оберіть об'єкт для будівництва та натисніть кнопку:</p>
-                    
-                    <form action="#" class="build-form">
-                        <label for="building-type">Тип об'єкта:</label>
-                        <select id="building-type" name="building">
-                            <option value="house">Житловий комплекс (50 бетону)</option>
-                            <option value="factory">Електростанція (100 металу)</option>
-                            <option value="park">Паркова зона (20 дерева)</option>
-                        </select>
+               <div class="construction-controls">
+    <p>Оберіть об'єкт для будівництва та натисніть кнопку:</p>
+    
+    <form action="#" class="build-form">
+        <label>Доступні проекти:</label>
+        
+        <div class="construction-grid">
+            <div class="build-card">
+                <span class="icon">🏠</span>
+                <span class="name">Житловий комплекс</span>
+                <span class="cost">50 бетону</span>
+            </div>
+            <div class="build-card">
+                <span class="icon">🏭</span>
+                <span class="name">Електростанція</span>
+                <span class="cost">100 металу</span>
+            </div>
+            <div class="build-card">
+                <span class="icon">🌳</span>
+                <span class="name">Паркова зона</span>
+                <span class="cost">20 дерева</span>
+            </div>
+            <div class="build-card">
+                <span class="icon">🛣️</span>
+                <span class="name">Дорога</span>
+                <span class="cost">10 асфальту</span>
+            </div>
+        </div>
 
-                        <button type="button" class="btn-build">Побудувати</button>
-                    </form>
+        <button type="button" class="btn-build">Побудувати</button>
+    </form>
 
-                    <div class="info-box">
-                        <p>⚠️ <em>Увага: Для будівництва переконайтеся у наявності вільних будівельників.</em></p>
-                    </div>
-                </div>
+</div>
             </div>
         </section>
 
